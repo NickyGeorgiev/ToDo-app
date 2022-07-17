@@ -1,13 +1,13 @@
 import { ToDo } from "./ToDo"
 import { ToDoInProgress } from "./ToDoInProgress"
-import { CompleteToDo } from "./CompleteToDo"
+import { CompletedToDo } from "./CompletedToDo"
 
 export const ToDoWrapper = () =>{
     return(
-        <div>
+        <div className="todo-wrapper">
             <ToDo />
             <ToDoInProgress />
-            <CompleteToDo />
+            <CompletedToDo />
         </div>
     )
 }
