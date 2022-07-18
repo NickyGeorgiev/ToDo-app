@@ -1,6 +1,13 @@
 export const Login = () => {
+
+    const onLogin = (e) =>{
+        e.preventDefault();
+
+        let formData = new FormData(e.target);
+
+    }
     return (
-        <form className="login">
+        <form className="login" onSubmit={onLogin}>
         <label htmlFor="email">Email</label><br />
         <input type="text" id="email" name="email" /><br />
         <label htmlFor="password">Password</label><br />
