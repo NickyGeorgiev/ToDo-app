@@ -1,4 +1,4 @@
-export const ToDoInProgress = () => {
+export const TodoInProgress = () => {
     return(
         <div className="in-progress">
             <h2>In progress</h2>

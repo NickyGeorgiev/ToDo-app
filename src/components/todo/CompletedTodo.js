@@ -1,4 +1,4 @@
-export const CompletedToDo = () => {
+export const CompletedTodo = () => {
     return(
         <div className="complete">
             <h2>Complete</h2>

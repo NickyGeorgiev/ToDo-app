@@ -1,4 +1,4 @@
-export const ToDo = () =>{
+export const Todo = () =>{
     return(
         <div className="todo">
             <h2>ToDo</h2>

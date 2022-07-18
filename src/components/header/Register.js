@@ -1,4 +1,4 @@
-export const RegisterForm = () => {
+export const Register = () => {
     return (
         <form className="register">
             <label htmlFor="email">Email</label><br />

@@ -1,7 +1,7 @@
-export const InitialTodo = () => {
+
+export const CreateTodo = () => {
     return (
-        <>
-            <div>ADD ToDo</div>
+        <div className="create">CREATE TODO
             <form className="add-todo">
                 <label htmlFor="title">ToDo Name *</label><br />
                 <input type="text" id="title" name="title" /><br />
@@ -11,6 +11,6 @@ export const InitialTodo = () => {
                 <textarea type="textarea" id="description" name="description" /><br />
                 <input className="submit" type="submit" value="Add new ToDo" />
             </form>
-        </>
+        </div>
     )
 }
