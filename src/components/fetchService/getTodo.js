@@ -1,4 +1,4 @@
-export const getTodo = (id) =>{
+export const getTodo = (id, getTodoData) =>{
 
     let url = `https://parseapi.back4app.com/classes/todos?where=%7B%22owner%22%3A%20%7B%20%22__type%22%3A%20%22Pointer%22%2C%20%22className%22%3A%20%22users%22%2C%20%22objectId%22%3A%20%22${id}%22%20%7D%7D`
     
@@ -13,9 +13,9 @@ export const getTodo = (id) =>{
       .then(response => response.json())
       .then(result => {
         if(result.results.length == 0){
-            alert('Грешно потребителско име или ипарола')
+            // alert('Грешно потребителско име или ипарола')
         } else {
-            console.log(result.results);
+            getTodoData(result.results);
         }
       })
       .catch(error => alert('error', error));
