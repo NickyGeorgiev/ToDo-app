@@ -1,9 +1,6 @@
-export const loginUser = (data, getUserData) => {
+export const getTodo = (id) =>{
 
-    let email = encodeURIComponent(data.email);
-    let password = encodeURIComponent(data.password);
-
-    let url = `https://parseapi.back4app.com/classes/users?where=%7B%20%22email%22%3A%20%22${email}%22%2C%20%22password%22%3A%20%22${password}%22%7D`
+    let url = `https://parseapi.back4app.com/classes/todos?where=%7B%22owner%22%3A%20%7B%20%22__type%22%3A%20%22Pointer%22%2C%20%22className%22%3A%20%22users%22%2C%20%22objectId%22%3A%20%22${id}%22%20%7D%7D`
     
     fetch(url, {
         method: 'GET',
@@ -18,8 +15,9 @@ export const loginUser = (data, getUserData) => {
         if(result.results.length == 0){
             alert('Грешно потребителско име или ипарола')
         } else {
-            getUserData(result.results);
+            console.log(result.results);
         }
       })
       .catch(error => alert('error', error));
+
 }
