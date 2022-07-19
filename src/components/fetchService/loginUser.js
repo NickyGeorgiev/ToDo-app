@@ -1,4 +1,4 @@
-export const loginUser = (data) => {
+export const loginUser = (data, getUserData) => {
 
     let email = encodeURIComponent(data.email);
     let password = encodeURIComponent(data.password);
@@ -20,7 +20,7 @@ export const loginUser = (data) => {
         if(result.results.length == 0){
             alert('Грешно потребителско име или ипарола')
         } else {
-            return result.results;
+            getUserData(result.results);
         }
       })
       .catch(error => alert('error', error));

@@ -1,6 +1,6 @@
 import { loginUser } from "../fetchService/loginUser";
 
-export const Login = () => {
+export const Login = ({getUserData}) => {
 
     const onLogin = (e) => {
         e.preventDefault();
@@ -11,7 +11,7 @@ export const Login = () => {
             email: formData.get('email'),
             password: formData.get('password'),
         }
-        loginUser(clientData)
+        loginUser(clientData, getUserData)
     }
 
     return (
