@@ -4,7 +4,7 @@ export const Register = () => {
 
     const onRegister = (e) =>{
         e.preventDefault();
-        if(e.target[1].value != e.target[2].value){
+        if(e.target[1].value !== e.target[2].value){
             alert('Паролите трябва да са еднакви');
         } else {
             let formData = new FormData(e.target);

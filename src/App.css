@@ -55,3 +55,20 @@
     width: 100%;
     border: 2px solid var(--text-color);
 }
+
+.todo-section{
+    display: flex;
+    flex-direction: column;
+    margin: 5% 1% 2% 1%;
+    padding: 2%;
+}
+
+.todo-title{
+    font-size: 2rem;
+}
+.todo-subtitle{
+    font-size: 1.3rem;
+}
+.todo-description{
+    font-size: 1rem;
+}
