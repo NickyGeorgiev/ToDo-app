@@ -20,9 +20,9 @@ export const TodoList = ({ getTodoData }) => {
         <div className='todo-list'>
             <div><Link to='/create'>Create new Todo</Link></div>
             <div className='todo-list-wrapper'>
-                <Todo data={todos ? todos.filter(x => x.status === 'todo') : ''} />
+                <Todo data={todos ? todos.filter(x => x.status === 'start') : ''} />
                 <TodoInProgress data={todos ? todos.filter(x => x.status === 'progress') : ''} />
-                <CompletedTodo data={todos ? todos.filter(x => x.status === 'completed') : ''} />
+                <CompletedTodo data={todos ? todos.filter(x => x.status === 'complete') : ''} />
             </div>
         </div>
     )
