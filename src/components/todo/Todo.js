@@ -1,19 +1,14 @@
-import { useContext } from "react"
-import { ToDoContext } from "../context/ToDoContext"
 import { SingleTodo } from "./SingleTodo";
 
-export const Todo = () =>{
+export const Todo = ({ data }) => {
 
-    let todos = useContext(ToDoContext)
-
-    return(
+    return (
         <div className="todo">
             <h2>ToDo</h2>
             <div className="todo-section">
-                {todos 
-                ? todos.map(x => 
-                <SingleTodo key={x.objectId} data={x} />)
-                : '' }
+                {data
+                    ? data.map(x => <SingleTodo key={x.objectId} info={x} />)
+                    : ''}
             </div>
         </div>
     )

@@ -1,6 +1,10 @@
+
+import { useNavigate } from "react-router-dom";
 import { loginUser } from "../fetchService/loginUser";
 
 export const Login = ({getUserData}) => {
+
+    let navigate = useNavigate();
 
     const onLogin = (e) => {
         e.preventDefault();
@@ -11,8 +15,9 @@ export const Login = ({getUserData}) => {
             email: formData.get('email'),
             password: formData.get('password'),
         }
-        loginUser(clientData, getUserData)
+        loginUser(clientData, getUserData);
     }
+    navigate('/');
 
     return (
         <form className="login" onSubmit={onLogin}>

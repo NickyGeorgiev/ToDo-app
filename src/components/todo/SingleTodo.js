@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export const SingleTodo = ({data}) => {
+export const SingleTodo = ({info}) => {
 
     let [isActive, setIsActive] = useState(false)
 
@@ -9,10 +9,10 @@ export const SingleTodo = ({data}) => {
     }
 
     return (
-        <button className="todo-title" onClick={onChange}>{data.title}
+        <button className="todo-title" onClick={onChange}>{info.title}
         {isActive && <div>
-            <div className="todo-subtitle">{data.subtitle}</div>
-            <div className="todo-description">{data.description}</div>
+            <div className="todo-subtitle">{info.subtitle}</div>
+            <div className="todo-description">{info.description}</div>
         </div>}
         </button>
     )

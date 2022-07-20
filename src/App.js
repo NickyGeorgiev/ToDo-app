@@ -6,7 +6,7 @@ import { Header } from './components/header/Header';
 import { MenuWrapper } from './components/MenuWrapper';
 import { Login } from './components/header/Login'
 import { Register } from './components/header/Register'
-import { CreateTodo } from './components/CreateTodo'
+import { CreateTodo } from './components/todo/CreateTodo'
 import { TodoList } from './components/todo/TodoList';
 import { Page404 } from './components/Page404'
 import { useState } from 'react';
