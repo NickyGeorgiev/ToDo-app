@@ -1,3 +1,4 @@
+
 export const loginUser = (data, getUserData) => {
 
     let email = encodeURIComponent(data.email);
@@ -19,6 +20,8 @@ export const loginUser = (data, getUserData) => {
             alert('Грешно потребителско име или ипарола')
         } else {
             getUserData(result.results);
+            sessionStorage.setItem('userId', result.results[0].objectId)
+            sessionStorage.setItem('userEmail', result.results[0].email)
         }
       })
       .catch(error => alert('error', error));

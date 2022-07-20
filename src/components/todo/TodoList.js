@@ -2,16 +2,14 @@ import { Todo } from './Todo'
 import { TodoInProgress } from './TodoInProgress'
 import { CompletedTodo } from './CompletedTodo'
 import { Link } from 'react-router-dom'
-import { useContext, useEffect } from 'react'
-import { UserDataContext } from '../context/UserDataContext'
+import { useEffect } from 'react'
 import { getTodo } from '../fetchService/getTodo'
 
 export const TodoList = ({getTodoData}) => {
-    let user = useContext(UserDataContext);
+    let userId = sessionStorage.getItem('userId');
 
     useEffect(()=>{
-        if (user !== undefined) {
-            let userId = user[0].objectId;
+        if (userId !== undefined) {
             getTodo(userId, getTodoData);
         }
     },[])

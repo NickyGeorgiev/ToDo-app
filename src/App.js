@@ -19,7 +19,7 @@ function App() {
     const getUserData = (data) => {
         setUserData(data)
     }
-    
+
     const getTodoData = (data) => {
         setTodoData(data)
     }
