@@ -1,7 +1,5 @@
 export const createTodoFetch = (todo) => {
 
-    console.log(todo);
-
     fetch("https://parseapi.back4app.com/classes/todos", {
         method: 'POST',
         headers: {

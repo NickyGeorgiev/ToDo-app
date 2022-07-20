@@ -1,18 +1,20 @@
 import { useRef, useState } from "react"
 import { deleteTodo } from "../fetchService/deleteTodo";
+import { useNavigate } from "react-router-dom";
 
 export const SingleTodo = ({info}) => {
-
+    let navigate = useNavigate();
     let [isActive, setIsActive] = useState(false)
 
-    let todoBtn = useRef(info);
+    let todoId = useRef(info);
 
     const onChange = () =>{
         setIsActive(!isActive)
     }
 
-    const removeTodo = (e) => {
-        deleteTodo(todoBtn.current)
+    const removeTodo = () => {
+        deleteTodo(todoId.current.objectId);
+        navigate('/')
     }
 
     return (
