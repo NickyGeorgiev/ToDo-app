@@ -49,34 +49,37 @@
     text-align: center;
 }
 
-.section-start,
-.section-in-progress,
-.section-complete {
+.start,
+.progress,
+.complete {
     width: 100%;
     border: 2px solid var(--text-color);
 }
 
-.start,
-.progress {
+.start-wrapper,
+.progress-wrapper {
     display: grid;
     grid-template-columns: 1fr;
     margin: 5% 1% 2% 1%;
     padding: 2%;
-    border: 2px solid white;
 }
 
-.complete {
+.complete-wrapper {
     display: grid;
     grid-template-columns: 90% 10%;
     margin: 5% 1% 2% 1%;
     padding: 2%;
     align-items: center;
-    border: 2px solid white;
 }
+
+/* .dragged{
+    scale: 110%;
+} */
 
 .todo-title {
     font-size: 2rem;
     cursor: pointer;
+    margin-bottom: 2%;
 }
 
 .todo-subtitle {

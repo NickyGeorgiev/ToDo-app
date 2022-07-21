@@ -15,13 +15,11 @@ export const changeStatus = (id, data) => {
         })
     })
         .then(response => {
-            if (response.ok) {
-                alert('TODO is Updated !')
-            } else {
+            if (!response.ok) {
                 throw new Error()
             }
+            console.log('Ok');
         })
-        .then(result => console.log(result))
         .catch(error => alert('Upsss... its ERROR', error));
 
 }

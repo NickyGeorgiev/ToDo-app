@@ -11,28 +11,34 @@ export const TodoList = ({ getTodoData }) => {
     let todos = useContext(ToDoContext);
     let [state, setState] = useState();
 
-
     useEffect(() => {
         if (userId !== undefined) {
             getTodo(userId, getTodoData);
         }
     }, [userId])
 
-
     const dragStart = (id) => {
         setTodoId(id);
     }
 
-    const dragEnd = (section) => {
-        // changeStatus(todoId, section);
-        todos = todos.map(x => x.objectId === todoId ? x.status = section.target.parentElement.className : '');
-        setState(todos)
+    const dragOver = (e) => {
+        e.preventDefault();
+    }
+
+    const dragEnd = (e) => {
+        let status = e.target.className;
+        if(status === 'start' || status === 'progress' || status === 'complete'){
+            changeStatus(todoId, status);
+            todos = todos.map(x => x.objectId === todoId ? x.status = status : '');
+            setState(todos)
+        }
     }
 
     const rendreTodo = (x) => {
         return (<SingleTodo
             key={x.objectId}
             data={x}
+            dragOver={dragOver}
             dragStart={dragStart}
             dragEnd={dragEnd}
         />)
@@ -42,22 +48,22 @@ export const TodoList = ({ getTodoData }) => {
         <div className='todo-list'>
             <div><Link to='/create'>Create new Todo</Link></div>
             <div className='todo-list-wrapper'>
-                <div className="section-start">
+                <div className="start" droppable='true' onDragOver={dragOver} onDrop={dragEnd}>
                     <h2>ToDo</h2>
-                    <div className="start" draggable={true}>
-                        {todos ? todos.filter(x => x.status === 'start').map(rendreTodo) : ''}
+                    <div className="start-wrapper">
+                        {todos && todos.filter(x => x.status === 'start').map(rendreTodo)}
                     </div>
                 </div>
-                <div className="section-in-progress">
+                <div className="progress" droppable='true' onDragOver={dragOver} onDrop={dragEnd}>
                     <h2>In progress</h2>
-                    <div className="progress" draggable={true}>
-                        {todos ? todos.filter(x => x.status === 'progress').map(rendreTodo) : ''}
+                    <div className="progress-wrapper">
+                        {todos && todos.filter(x => x.status === 'progress').map(rendreTodo)}
                     </div>
                 </div>
-                <div className="section-complete">
+                <div className="complete" droppable='true' onDragOver={dragOver} onDrop={dragEnd}>
                     <h2>Complete</h2>
-                    <div className="complete" draggable={true}>
-                        {todos ? todos.filter(x => x.status === 'complete').map(rendreTodo) : ''}
+                    <div className="complete-wrapper">
+                        {todos && todos.filter(x => x.status === 'complete').map(rendreTodo)}
                     </div>
                 </div>
             </div>
