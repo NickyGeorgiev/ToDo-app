@@ -1,12 +1,20 @@
 import { Link } from 'react-router-dom'
-import { useContext, useState } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import { ToDoContext } from '../context/ToDoContext'
 import { changeStatus } from '../fetchService/changeStatus'
 import { SingleTodo } from './SingleTodo'
+import { getTodo } from '../fetchService/getTodo'
 
-export const TodoList = () => {
+export const TodoList = ({getTodoData}) => {
+    let userId = sessionStorage.getItem('userId');
     let [todoId, setTodoId] = useState();
     let todos = useContext(ToDoContext);
+
+    useEffect(() => {
+        if (userId !== undefined) {
+            getTodo(userId, getTodoData);
+        }
+    }, [])
 
     const dragStart = (id) => {
         setTodoId(id);
