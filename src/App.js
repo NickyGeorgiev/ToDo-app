@@ -9,8 +9,7 @@ import { Register } from './components/header/Register'
 import { CreateTodo } from './components/todo/CreateTodo'
 import { TodoList } from './components/todo/TodoList';
 import { Page404 } from './components/Page404'
-import { useEffect, useState } from 'react';
-import { getTodo } from './components/fetchService/getTodo';
+import { useState } from 'react';
 
 function App() {
     let [userData, setUserData] = useState();
