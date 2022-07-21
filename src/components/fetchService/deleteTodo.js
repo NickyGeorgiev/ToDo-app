@@ -18,6 +18,5 @@ export const deleteTodo = (id) => {
                 throw new Error()
             }
         })
-        .then(result => console.log(result))
         .catch(error => alert('Upsss... its ERROR', error));
 }

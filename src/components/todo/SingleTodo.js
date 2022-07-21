@@ -8,7 +8,7 @@ export const SingleTodo = ({ data, dragStart, dragEnter }) => {
     let todoId = useRef(data);
     let [where, setWhere] = useState()
 
-    const onChange = () => {
+    const onButtonClicked = () => {
         setIsActive(!isActive)
     }
 
@@ -36,7 +36,7 @@ export const SingleTodo = ({ data, dragStart, dragEnter }) => {
             <button
                 draggable="true"
                 className="todo-title"
-                onClick={onChange}
+                onClick={onButtonClicked}
                 onDragStart={start}
                 onDragEnter={enter}
             >
@@ -49,6 +49,5 @@ export const SingleTodo = ({ data, dragStart, dragEnter }) => {
             </button>
             {data.status === 'complete' ? <button onClick={removeTodo}> X </button> : ''}
         </>
-
     )
 }

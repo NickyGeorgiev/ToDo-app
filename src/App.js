@@ -13,7 +13,6 @@ import { useEffect, useState } from 'react';
 import { getTodo } from './components/fetchService/getTodo';
 
 function App() {
-
     let [userData, setUserData] = useState();
     let [todoData, setTodoData] = useState();
     let userId = sessionStorage.getItem('userId');
@@ -29,6 +28,7 @@ function App() {
     }
 
     const getTodoData = (data) => {
+        console.log(data);
         setTodoData(data)
     }
 
