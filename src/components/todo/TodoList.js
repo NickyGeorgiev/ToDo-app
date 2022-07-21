@@ -1,11 +1,8 @@
-import { Todo } from './Todo'
-import { TodoInProgress } from './TodoInProgress'
-import { CompletedTodo } from './CompletedTodo'
 import { Link } from 'react-router-dom'
-import { useEffect, useContext, useState } from 'react'
-import { getTodo } from '../fetchService/getTodo'
+import { useContext, useState } from 'react'
 import { ToDoContext } from '../context/ToDoContext'
 import { changeStatus } from '../fetchService/changeStatus'
+import { SingleTodo } from './SingleTodo'
 
 export const TodoList = () => {
     let [todoId, setTodoId] = useState();
@@ -15,29 +12,41 @@ export const TodoList = () => {
         setTodoId(id);
     }
 
-    const dragEnter = (data) => {
-        changeStatus(todoId, data);
+    const dragEnter = (section) => {
+        // changeStatus(todoId, section);
+    }
+
+    const rendreTodo = (x) => {
+        return (<SingleTodo
+            key={x.objectId}
+            data={x}
+            dragStart={dragStart}
+            dragEnter={dragEnter}
+        />)
     }
 
     return (
         <div className='todo-list'>
             <div><Link to='/create'>Create new Todo</Link></div>
             <div className='todo-list-wrapper'>
-                <Todo
-                    dragStart={dragStart}
-                    dragEnter={dragEnter}
-                    data={todos ? todos.filter(x => x.status === 'start') : ''}
-                />
-                <TodoInProgress
-                    dragStart={dragStart}
-                    dragEnter={dragEnter}
-                    data={todos ? todos.filter(x => x.status === 'progress') : ''}
-                />
-                <CompletedTodo
-                    dragStart={dragStart}
-                    dragEnter={dragEnter}
-                    data={todos ? todos.filter(x => x.status === 'complete') : ''}
-                />
+                <div className="section-start">
+                    <h2>ToDo</h2>
+                    <div className="start" draggable="true">
+                        {todos ? todos.filter(x => x.status === 'start').map(rendreTodo) : ''}
+                    </div>
+                </div>
+                <div className="section-in-progress">
+                    <h2>In progress</h2>
+                    <div className="progress" draggable="true">
+                        {todos ? todos.filter(x => x.status === 'progress').map(rendreTodo) : ''}
+                    </div>
+                </div>
+                <div className="section-complete">
+                    <h2>Complete</h2>
+                    <div className="complete" draggable="true">
+                        {todos ? todos.filter(x => x.status === 'complete').map(rendreTodo) : ''}
+                    </div>
+                </div>
             </div>
         </div>
     )
