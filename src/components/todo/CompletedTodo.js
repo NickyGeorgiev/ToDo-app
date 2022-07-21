@@ -1,13 +1,20 @@
 import { SingleTodo } from "./SingleTodo";
 
-export const CompletedTodo = ({ data }) => {
+export const CompletedTodo = ({ data, dragStart, dragEnter }) => {
+
 
     return (
-        <div className="complete">
+        <div className="section-complete">
             <h2>Complete</h2>
-            <div className="section-complete">
+            <div className="complete" draggable="true">
                 {data
-                    ? data.map(x => <SingleTodo key={x.objectId} info={x} />)
+                    ? 
+                    data.map(x => <SingleTodo 
+                        key={x.objectId} 
+                        info={x} 
+                        dragStart={dragStart} 
+                        dragEnter={dragEnter}
+                    />)
                     : ''}
             </div>
         </div>

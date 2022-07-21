@@ -1,13 +1,19 @@
 import { SingleTodo } from "./SingleTodo";
 
-export const TodoInProgress = ({ data }) => {
+export const TodoInProgress = ({ data, dragStart, dragEnter }) => {
 
     return (
-        <div className="in-progress">
+        <div className="section-in-progress">
             <h2>In progress</h2>
-            <div className="section-progress">
+            <div className="progress" draggable="true">
                 {data
-                    ? data.map(x => <SingleTodo key={x.objectId} info={x} />)
+                    ? 
+                    data.map(x => <SingleTodo 
+                        key={x.objectId} 
+                        info={x} 
+                        dragStart={dragStart} 
+                        dragEnter={dragEnter}
+                    />)
                     : ''}
             </div>
         </div>

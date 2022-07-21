@@ -49,31 +49,34 @@
     text-align: center;
 }
 
-.todo,
-.in-progress,
-.complete {
+.section-start,
+.section-in-progress,
+.section-complete {
     width: 100%;
     border: 2px solid var(--text-color);
 }
 
-.section-todo,
-.section-progress {
+.start,
+.progress {
     display: grid;
     grid-template-columns: 1fr;
     margin: 5% 1% 2% 1%;
     padding: 2%;
+    border: 2px solid white;
 }
 
-.section-complete {
+.complete {
     display: grid;
     grid-template-columns: 90% 10%;
     margin: 5% 1% 2% 1%;
     padding: 2%;
     align-items: center;
+    border: 2px solid white;
 }
 
 .todo-title {
     font-size: 2rem;
+    cursor: pointer;
 }
 
 .todo-subtitle {

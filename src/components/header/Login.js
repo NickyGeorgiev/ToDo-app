@@ -1,3 +1,4 @@
+
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../fetchService/loginUser";
 
@@ -16,6 +17,7 @@ export const Login = ({getUserData}) => {
         }
         loginUser(clientData, getUserData);
     }
+
     navigate('/');
 
     return (

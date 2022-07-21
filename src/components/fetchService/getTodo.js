@@ -12,7 +12,7 @@ export const getTodo = (id, getTodoData) =>{
     })
       .then(response => response.json())
       .then(result => {
-        if(result.results.length == 0){
+        if(result.results.length === 0){
             // alert('Грешно потребителско име или ипарола')
         } else {
             getTodoData(result.results);

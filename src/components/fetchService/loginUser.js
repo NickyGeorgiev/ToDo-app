@@ -4,7 +4,6 @@ export const loginUser = (data, getUserData) => {
     let email = encodeURIComponent(data.email);
     let password = encodeURIComponent(data.password);
 
-
     let url = `https://parseapi.back4app.com/classes/users?where=%7B%20%22email%22%3A%20%22${email}%22%2C%20%22password%22%3A%20%22${password}%22%7D`
 
     fetch(url, {
