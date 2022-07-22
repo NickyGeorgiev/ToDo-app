@@ -3,7 +3,7 @@
 :root {
     --nav-background: #000000;
     --bg-color: #25182E;
-    --text-color: #d8d8d8;
+    --text-color: #f5cac3;
     --todo-color: #FDB095;
     --additional: #E5958E;
     --gradient: linear-gradient(45deg, rgba(136,114,152,1) 0%, rgba(229,149,142,1) 82%, rgba(253,176,149,1) 100%);
@@ -51,7 +51,7 @@
 .create{
     font-size: 2rem;
     text-align: center;
-    margin: 5% auto
+    margin: 2% auto
 }
 
 .register, .login{
@@ -61,7 +61,7 @@
 }
 
 .add-todo{
-    margin-top: 5%;
+    margin-top: 3%;
     font-size: 2rem;
     text-align: center;
 }
@@ -117,13 +117,13 @@
     margin: 0 30% 0 30%;
     border: 2px solid var(--border);
     padding: 1% 0 1% 0;
-    background-color: var(--todo-color);
+    background: linear-gradient(180deg, rgba(172,139,196,1) 0%, rgba(168,107,131,1) 33%, rgba(223,146,163,1) 66%, rgba(237,180,160,1) 100%);
     border-radius: 20px;
 }
 
 .create-todo a{
     text-decoration: none;
-    background-color: var(--todo-color);
+    background-color: transparent;
     color: var(--bg-color);
     font-size: 1.5rem;
 }
@@ -150,6 +150,12 @@
     border-image: linear-gradient(to bottom,#d91ac2,rgba(0, 0, 0, 0)) 1 100%;
 }
 
+.start h2,
+.progress h2,
+.complete h2 {
+
+}
+
 .start-wrapper,
 .progress-wrapper {
     display: grid;
@@ -168,7 +174,7 @@
 
 .todo-title {
     font-size: 2rem;
-    cursor: pointer;
+    cursor: grab;
     margin-bottom: 2%;
     border-radius: 10px;
     background: var(--gradient);
@@ -177,19 +183,20 @@
 }
 
 .todo-subtitle {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     background-color: var(--additional);
     color: var(--bg-color);
 }
 
 .todo-description {
-    font-size: 1rem;
+    font-size: 1.2rem;
     background-color: var(--additional);
     color: var(--bg-color);
 }
 
 .delete{
     border-radius: 10px;
+    font-size: 1.5rem;
     height: 85%;
     color: var(--bg-color);
     background-color: lightcoral;
