@@ -2,6 +2,7 @@ import { useRef, useState } from "react"
 import { deleteTodo } from "../fetchService/deleteTodo";
 import { useNavigate } from "react-router-dom";
 
+
 export const SingleTodo = ({ data, dragStart, dragOver, dragEnd }) => {
     let navigate = useNavigate();
     let [isActive, setIsActive] = useState(false)
@@ -17,7 +18,7 @@ export const SingleTodo = ({ data, dragStart, dragOver, dragEnd }) => {
     }
 
     const start = (e) => {
-        e.target.className = 'todo-title dragged';
+        // e.target.className = 'todo-title dragged';
         dragStart(todoId.current.objectId);
     }
 
@@ -26,7 +27,7 @@ export const SingleTodo = ({ data, dragStart, dragOver, dragEnd }) => {
     }
 
     const drop = (e) => {
-        e.target.className = 'todo-title';
+        // e.target.className = 'todo-title';
         dragEnd(e);
     }
 
@@ -39,8 +40,7 @@ export const SingleTodo = ({ data, dragStart, dragOver, dragEnd }) => {
                 onDragStart={start}
                 onDragOver={over}
                 onDrop={drop}
-            >
-                {data.title}
+            > {data.title}
                 {isActive &&
                     <div>
                         <div className="todo-subtitle">{data.subtitle}</div>
