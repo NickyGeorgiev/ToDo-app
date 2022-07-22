@@ -1,4 +1,4 @@
-
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../fetchService/loginUser";
 
@@ -8,17 +8,16 @@ export const Login = ({getUserData}) => {
 
     const onLogin = (e) => {
         e.preventDefault();
-
+        
         let formData = new FormData(e.target);
-
+        
         let clientData = {
             email: formData.get('email'),
             password: formData.get('password'),
         }
         loginUser(clientData, getUserData);
+        navigate('/');
     }
-
-    navigate('/');
 
     return (
         <form className="login" onSubmit={onLogin}>

@@ -13,7 +13,7 @@ export const CreateTodo = () => {
             title: formData.get('title'),
             subtitle: formData.get('subtitle'),
             description: formData.get('description'),
-            owner: sessionStorage.getItem('userId')
+            owner: localStorage.getItem('userId')
         }
         createTodoFetch(todoData);
         navigate('/')

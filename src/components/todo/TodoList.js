@@ -6,7 +6,7 @@ import { SingleTodo } from './SingleTodo'
 import { getTodo } from '../fetchService/getTodo'
 
 export const TodoList = ({ getTodoData }) => {
-    let userId = sessionStorage.getItem('userId');
+    let userId = localStorage.getItem('userId');
     let [todoId, setTodoId] = useState();
     let todos = useContext(ToDoContext);
     let [state, setState] = useState();

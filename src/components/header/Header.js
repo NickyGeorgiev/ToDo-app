@@ -3,8 +3,8 @@ import { Link } from "react-router-dom"
 
 export const Header = () => {
 
-    let loggedUser = sessionStorage.getItem('userId')
-    let userEmail = sessionStorage.getItem('userEmail')
+    let loggedUser = localStorage.getItem('userId')
+    let userEmail = localStorage.getItem('userEmail')
 
     let [isLogin, setIsLogin] = useState(false);
 
@@ -16,7 +16,7 @@ export const Header = () => {
 
     const logOut = () => {
         console.log('click');
-        sessionStorage.clear();
+        localStorage.clear();
     }
 
     return (
