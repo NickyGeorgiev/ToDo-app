@@ -20,7 +20,7 @@ export const CreateTodo = () => {
     }
 
     return (
-        <div className="create">CREATE TODO
+        <div className="create">Create Todo
             <form className="add-todo" onSubmit={createNewTodo}>
                 <label htmlFor="title">ToDo Name *</label><br />
                 <input type="text" id="title" name="title" /><br />

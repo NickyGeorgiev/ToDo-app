@@ -32,16 +32,15 @@ export const SingleTodo = ({ data, dragStart, dragOver, dragEnd }) => {
 
     return (
         <>
-            <button
+            <button className="todo-title"
                 draggable
-                className="todo-title"
                 onClick={onButtonClicked}
                 onDragStart={start}
                 onDragOver={over}
                 onDrop={drop}
             > {data.title}
                 {isActive &&
-                    <div>
+                    <div className="summary">
                         <div className="todo-subtitle">{data.subtitle}</div>
                         <div className="todo-description">{data.description}</div>
                     </div>}
