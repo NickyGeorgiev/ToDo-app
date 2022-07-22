@@ -46,7 +46,7 @@ export const TodoList = ({ getTodoData }) => {
 
     return (
         <div className='todo-list'>
-            <div><Link to='/create'>Create new Todo</Link></div>
+            <div className='create-todo'><Link to='/create'>Create new Todo</Link></div>
             <div className='todo-list-wrapper'>
                 <div className="start" droppable='true' onDragOver={dragOver} onDrop={dragEnd}>
                     <h2>ToDo</h2>

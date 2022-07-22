@@ -10,7 +10,7 @@ export const MenuWrapper = () => {
                     <Link to='/create'>Create Todo</Link>
                 </li>
                 <li>
-                    <Link to='/load'>Load Todos</Link>
+                    <Link to='/load'>Load Todos...</Link>
                 </li>
             </ul>
         </div>

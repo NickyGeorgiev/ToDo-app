@@ -2,7 +2,6 @@ import { useRef, useState } from "react"
 import { deleteTodo } from "../fetchService/deleteTodo";
 import { useNavigate } from "react-router-dom";
 
-
 export const SingleTodo = ({ data, dragStart, dragOver, dragEnd }) => {
     let navigate = useNavigate();
     let [isActive, setIsActive] = useState(false)
@@ -47,7 +46,7 @@ export const SingleTodo = ({ data, dragStart, dragOver, dragEnd }) => {
                         <div className="todo-description">{data.description}</div>
                     </div>}
             </button>
-            {data.status === 'complete' ? <button onClick={removeTodo}> X </button> : ''}
+            {data.status === 'complete' ? <button className='delete' onClick={removeTodo}> X </button> : ''}
         </>
     )
 }
