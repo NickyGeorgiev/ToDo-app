@@ -65,7 +65,8 @@
     margin: 2% auto
 }
 
-.login-page, .register-page{
+.login-page,
+.register-page {
     font-size: 2rem;
     text-align: center;
     margin: 5% auto
@@ -97,7 +98,8 @@
 
 @media screen and (max-width: 500px) {
 
-    .login-page, .register-page{
+    .login-page,
+    .register-page {
         margin-top: 5%;
         font-size: 1.5rem;
     }
@@ -162,7 +164,7 @@
         font-size: 1.2rem;
         text-align: center;
     }
-    
+
     .menu-wrapper ul li {
         margin-bottom: 10%;
     }
@@ -197,7 +199,7 @@
 }
 
 @media screen and (max-width: 500px) {
-    .create{
+    .create {
         margin-top: 5%;
         font-size: 1.5rem;
     }
@@ -206,7 +208,7 @@
         font-size: 1.2rem;
     }
 
-    .add-todo{
+    .add-todo {
         margin-top: 10%;
     }
 }
@@ -289,6 +291,33 @@
     border: none;
     box-shadow: 2px 2px 2px var(--border);
 }
+
+.todo-title:hover {
+    animation: rotate .3s ease;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotateZ(0deg);
+    }
+
+    25% {
+        transform: rotateZ(-2deg);
+    }
+
+    50% {
+        transform: rotateZ(0deg);
+    }
+
+    75% {
+        transform: rotateZ(2deg);
+    }
+
+    100% {
+        transform: rotateZ(0deg);
+    }
+}
+
 
 .todo-subtitle {
     font-size: 1.6rem;
