@@ -275,7 +275,7 @@
 
 .complete-wrapper {
     display: grid;
-    grid-template-columns: 90% 10%;
+    grid-template-columns: 85% 15%;
     margin: 5% 1% 2% 1%;
     padding: 2%;
 }
@@ -337,10 +337,9 @@
 .delete {
     border-radius: 10px;
     font-size: 1.5rem;
-    height: 85%;
     color: var(--bg-color);
-    background-color: lightcoral;
-    border: 1px solid var(--border);
+    background: linear-gradient(180deg, rgba(255,0,0,1) 0%, rgba(221,111,143,1) 100%);
+    border: 2px solid var(--border);
     cursor: pointer;
 }
 
