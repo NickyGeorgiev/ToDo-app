@@ -12,7 +12,7 @@ export const TodoList = ({ getTodoData }) => {
     let [state, setState] = useState();
 
     useEffect(() => {
-        if (userId !== undefined) {
+        if (userId) {
             getTodo(userId, getTodoData);
         }
     }, [userId])

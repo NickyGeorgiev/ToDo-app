@@ -17,13 +17,13 @@ export const loginUser = (data, getUserData) => {
         .then(response => response.json())
         .then(result => {
             if (result.results.length === 0) {
-                alert('Грешно потребителско име или ипарола')
+                alert('Wrong username or password')
             } else {
                 getUserData(result.results);
                 localStorage.setItem('userId', result.results[0].objectId);
                 localStorage.setItem('userEmail', result.results[0].email);
             }
         })
-        .catch(error => alert('error', error));
+        .catch(error => alert('Ups... is there problem :(', error));
 
 }

@@ -27,5 +27,5 @@ export const createTodoFetch = (todo) => {
             }
         })
         .then(result => console.log(result))
-        .catch(error => alert('Upsss... its ERROR', error));
+        .catch(error => alert('Ups... is there problem :(', error));
 }

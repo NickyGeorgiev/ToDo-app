@@ -20,6 +20,6 @@ export const changeStatus = (id, data) => {
             }
             console.log('Ok');
         })
-        .catch(error => alert('Upsss... its ERROR', error));
+        .catch(error => alert('Ups... is there problem :(', error));
 
 }

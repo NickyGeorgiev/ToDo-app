@@ -14,11 +14,11 @@ export const registerUser = (data) => {
     })
         .then(response => {
             if(response.ok){
-                alert('Вашият акаунт е създаден успешно')
+                alert('Your account is created successfuly!')
             } else{
                 throw new Error()
             }
         })
         .then(result => console.log(result))
-        .catch(error => alert('Възникна грешка', error));
+        .catch(error => alert('Ups... is there problem :(', error));
 }

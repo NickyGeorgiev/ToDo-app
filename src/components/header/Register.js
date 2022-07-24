@@ -1,11 +1,14 @@
+import { useNavigate } from "react-router-dom";
 import { registerUser } from "../fetchService/registerUser";
 
 export const Register = () => {
 
+    let navigate = useNavigate();
+
     const onRegister = (e) => {
         e.preventDefault();
         if (e.target[1].value !== e.target[2].value) {
-            alert('Паролите трябва да са еднакви');
+            alert('Both passwords must be same!');
         } else {
             let formData = new FormData(e.target);
 
@@ -14,6 +17,7 @@ export const Register = () => {
                 password: formData.get('password'),
             }
             registerUser(clientData);
+            navigate('/login')
         }
     }
 

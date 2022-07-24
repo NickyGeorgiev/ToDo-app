@@ -23,9 +23,9 @@ export const Login = ({ getUserData }) => {
         <div className="login-page">Login
             <form className="login" onSubmit={onLogin}>
                 <label htmlFor="email">Email</label><br />
-                <input type="text" id="email" name="email" /><br />
+                <input type="text" id="email" name="email" required/><br />
                 <label htmlFor="password">Password</label><br />
-                <input type="password" id="password" name="password" /><br />
+                <input type="password" id="password" name="password" required/><br />
                 <input className="submit" type="submit" value="Login!" />
             </form>
         </div>
