@@ -8,7 +8,7 @@ export const registerUser = (data) => {
             "Content-Type" : "application/json"
         },
         body: JSON.stringify({
-            "email": data.email,
+            "email": data.user,
             "password": data.password
         })
     })

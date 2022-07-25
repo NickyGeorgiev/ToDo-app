@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 export const Header = () => {
 
     let loggedUser = localStorage.getItem('userId')
-    let userEmail = localStorage.getItem('userEmail')
+    let userName = localStorage.getItem('username')
 
     let [isLogin, setIsLogin] = useState(false);
 
@@ -38,7 +38,7 @@ export const Header = () => {
                     : 
                     <>
                         <li>
-                            <h3>Hello, {userEmail}</h3>
+                            <h3>Hello, {userName}</h3>
                         </li>
                         <li>
                             <a href='/' onClick={logOut}>Logout</a>

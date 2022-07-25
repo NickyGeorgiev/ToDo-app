@@ -1,10 +1,10 @@
 
 export const loginUser = (data, getUserData) => {
 
-    let email = encodeURIComponent(data.email);
+    let user = encodeURIComponent(data.user);
     let password = encodeURIComponent(data.password);
 
-    let url = `https://parseapi.back4app.com/classes/users?where=%7B%20%22email%22%3A%20%22${email}%22%2C%20%22password%22%3A%20%22${password}%22%7D`
+    let url = `https://parseapi.back4app.com/classes/users?where=%7B%20%22email%22%3A%20%22${user}%22%2C%20%22password%22%3A%20%22${password}%22%7D`
 
     fetch(url, {
         method: 'GET',
@@ -21,7 +21,7 @@ export const loginUser = (data, getUserData) => {
             } else {
                 getUserData(result.results);
                 localStorage.setItem('userId', result.results[0].objectId);
-                localStorage.setItem('userEmail', result.results[0].email);
+                localStorage.setItem('username', result.results[0].email);
             }
         })
         .catch(error => alert('Ups... is there problem :(', error));

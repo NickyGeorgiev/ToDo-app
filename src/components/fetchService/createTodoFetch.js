@@ -26,6 +26,5 @@ export const createTodoFetch = (todo) => {
                 throw new Error()
             }
         })
-        .then(result => console.log(result))
         .catch(error => alert('Ups... is there problem :(', error));
 }

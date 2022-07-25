@@ -12,7 +12,7 @@ export const Login = ({ getUserData }) => {
         let formData = new FormData(e.target);
 
         let clientData = {
-            email: formData.get('email'),
+            user: formData.get('user'),
             password: formData.get('password'),
         }
         loginUser(clientData, getUserData);
@@ -22,8 +22,8 @@ export const Login = ({ getUserData }) => {
     return (
         <div className="login-page">Login
             <form className="login" onSubmit={onLogin}>
-                <label htmlFor="email">Email</label><br />
-                <input type="text" id="email" name="email" required/><br />
+                <label htmlFor="user">Username</label><br />
+                <input type="text" id="user" name="user" required/><br />
                 <label htmlFor="password">Password</label><br />
                 <input type="password" id="password" name="password" required/><br />
                 <input className="submit" type="submit" value="Login!" />

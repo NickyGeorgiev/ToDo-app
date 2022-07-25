@@ -13,7 +13,7 @@ export const Register = () => {
             let formData = new FormData(e.target);
 
             let clientData = {
-                email: formData.get('email'),
+                user: formData.get('user'),
                 password: formData.get('password'),
             }
             registerUser(clientData);
@@ -24,8 +24,8 @@ export const Register = () => {
     return (
         <div className="register-page">Register
             <form className="register" onSubmit={onRegister}>
-                <label htmlFor="email">Email</label><br />
-                <input type="text" id="email" name="email" required /><br />
+                <label htmlFor="user">Username</label><br />
+                <input type="text" id="user" name="user" required /><br />
                 <label htmlFor="password">Password</label><br />
                 <input type="password" id="password" name="password" required /><br />
                 <label htmlFor="re-pass">Repeat password</label><br />
